@@ -1,1 +1,62 @@
 /* Ini file css */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* menampilkan logo website */
+.main-logo {
+    height: 50px;
+    width: 50px;
+    background-image: url(https://picsum.photos/200);
+    background-position: center;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+/* Menghilangkan celah antar kolom */
+nav {
+    display: flex;
+}
+
+/* cukup dibuat 1 class saja untuk main navigasi karena hanya ada 1*/
+nav>a {
+    padding: 8px;
+    border: 1px solid;
+    text-decoration: none;
+    color: black;
+}
+
+.banner-img {
+    border: 1px solid;
+    height: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.our-profile-content {
+    border: 1px solid;
+    height: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.achievement-content {
+    border: 1px solid;
+    height: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.message-us-content {
+    border: 1px solid;
+    height: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
