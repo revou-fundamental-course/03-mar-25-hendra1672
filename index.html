@@ -1,88 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- =================================================================== -->
-<head>
+<!-- ======================================================================= -->
+
+ <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
+
     <!-- For responsive purpose -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Hendra</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
+<!-- ====================================================================== -->
 
-<body>
-
-    <!-- ================================================================ -->
-
+    <!-- Main Header -->
     <header class="main-header">
 
         <!-- Logo Website -->
         <div class="main-logo"></div>
 
-            <!-- Navigation -->
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#our-profile">Our Profile</a>
-                <a href="#achievement">Achievement</a>
-                <a href="#message-us">Message Us</a>
-            </nav>
+        <!-- Navigation -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#our-profile">Our Profile</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#message-us">Message Us</a>
+        </nav>
     </header>
 
-    <!-- membuat garis pembatas antar header dan main -->
-    <hr>
-
-    <!-- =============================================================== -->
+    <!-- ================================================================= -->
 
     <!-- Main Content -->
     <main>
 
         <!-- Home Content -->
-         <section id="home">
+        <section id="home">
             <header>
-                <h1>Hi User, Welcome to my Portfolio</h1>
-                <p>Here you can see my profile, achievement. and message me</p>
+                <h1>Hi User, Welcome to My Portfolio</h1>
+                <p>Here you can see my profile, achievement and message me</p>
             </header>
 
             <!-- Banner Autoslide -->
-             <div class="banner-img">
-                <img src="assets/lambang.jpg" width="200px" alt="Kue Basah">
-             </div>
-         </section>
-         <hr />
+            <div class="banner-img banner-1"></div>
+            <div class="banner-img banner-2"></div>
+            <div class="banner-img banner-3"></div>
+        </section>
 
-
-         <!-- Our Profile Content -->
-         <section id="our-profile">
+        <!-- Our Profile Content -->
+        <section id="our-profile">
             <header>
                 <h1>Our Profile</h1>
             </header>
 
             <!-- Our Profile Content -->
             <div class="our-profile-content">
-                <img src="assets/kue 1.jpg" width="200px" alt="Kue Basah">
-            </div>
-            <a href="#home">Top Up</a>
-            <hr>
-         </section>
+                <p><p>
+                <img src="assets/Merk.jpg" alt="merk"
+                width="200px" height="200px">
+                <body>
+            <h5><p><p><p><p><p><p>
+                Menjelang Hari Raya Idul Fitri merupakan moment yang sangat tepat untuk
+                saling memaafkan dan berkunjung ke sanak saudara.
+                Kehadiran anda akan lebih berkesan dengan membawakan hampers ke sanak family anda.
+                Jangan lupa untuk menghubungi kami untuk memenuhi kebutuhan hampers anda.
+                Kami menyediakan berbagai macam kue kue basah dan kering sesuai dengan selera anda.
+            </h5>
+                </p></p></p></p></p></p></p></p>
+                </body>
 
+            </div>
+        </section>
 
         <!-- Achievement Content -->
-         <section id="achievement">
+        <section id="achievement">
             <header>
                 <h1>Achievement</h1>
             </header>
-
-            <!-- Achievement Content -->
+        
+            <!-- achievement Content -->
             <div class="achievement-content">
-                <img src="assets/kue 2.jpg" width="200px" alt="Kue Basah">
+                <body>
+                <h2>
+                    Dengan mempergunakan bahan - bahan yang berkualitas dan dengan pengalaman selama lebih dari 10 tahun, kami menjamin kualitas dan rasa dari kue - kue yang kami buat. Kami juga tidak
+                    mempergunakan bahan bahan pengawet dan bahan yang bukan diperuntukan untuk pembuatan kue.
+                </h2>
+                </body>
             </div>
-            <a href="#home">Top Up</a>
-            <hr>
-         </section>
+        </section>
 
         <!-- Message Us Content -->
         <section id="message-us">
@@ -92,24 +100,61 @@
 
             <!-- Message Us Content -->
             <div class="message-us-content">
-                <img src="assets/kue3.jpg" width="200px" alt="Kue Basah">
+                <form action="">
+                    <label for="name-input">Nama:</label>
+                    <input type="text" id="name-input" pesan="name" placeholder="Your Name" required>
+                </form>
+                <p>
+                    <div>
+                        <label for="dob">Tanggal Lahir :</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                </P>
+                <p>
+                    <div>
+                        <Label>Jenis Kelamin :</Label>
+                        <div class="gender-options">
+                            <label>
+                        <input type="radio" name="gender" value="Laki-Laki" required>Laki-Laki
+                        </label>
+                        <label>
+                        <input type="radio" name="gender" value="Perempuan" required>Perempuan
+                        </label>
+                    </div>
+                </p>
+                <p>
+                    <form action="">
+                        <label for="pesan-input">Pesan:</label>
+                        <input type="text" id="pesan-input" pesan="pesan" placeholder="Your Message" required>
+                    </form>
+                </p>
+                    <p>
+                    <button type="button" onclick="validateForm()">Submit</button>
+                    </p>
+                
+<br>
+                <div id="Message-output">
+                    <p>Nama : <span id="output-name"></span></p>
+                    <p>Tanggal Lahir : <span id="output-dob"></span></p>
+                    <p>Jenis Kelamin : <span id="output-gender"></span></p>
+                    <p>Pesan : <span id="output-message"></span></p>
+                </div>
+
             </div>
-
-            <a href="#home">Top Up</a>
-        
         </section>
-
     </main>
 
-     <!-- =============================================================== -->
+    <!-- =================================================================================================== -->
 
     <!-- Main Footer -->
     <footer>
-        <p>&COPY; 2025 Hendra</p>
+        <p>&copy; 2025 Hendra</p>
     </footer>
 
-    <!-- ================================================================ -->
+    <!-- =================================================================================================== -->
 
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

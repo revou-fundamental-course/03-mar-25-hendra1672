@@ -1,27 +1,28 @@
 /* Ini file css */
 
+/* Class Header */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* menampilkan logo website */
+/* Class Main Logo */
 .main-logo {
     height: 50px;
     width: 50px;
-    background-image: url(https://picsum.photos/200);
+
+    /* Class local image */
+    background-image: url(../assets/1.jpg);
     background-position: center;
-    border-radius: 50%;
     background-size: cover;
+    border-radius: 50%;
 }
 
-/* Menghilangkan celah antar kolom */
+/* Class navigasi */
 nav {
     display: flex;
 }
-
-/* cukup dibuat 1 class saja untuk main navigasi karena hanya ada 1*/
 nav>a {
     padding: 8px;
     border: 1px solid;
@@ -29,34 +30,68 @@ nav>a {
     color: black;
 }
 
+/* banner class local banner*/
 .banner-img {
-    border: 1px solid;
-    height: 300px;
-    align-content: center;
-    text-align: center;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+}
+.banner-1 {
+    background-image: url(../assets/Kue1.jpg);
+}
+.banner-2 {
+    background-image: url(../assets/Kue2.jpg);
+}
+.banner-3 {
+    background-image: url(../assets/Kue3.jpg);
 }
 
+/* Class Our Profile */
 .our-profile-content {
     border: 1px solid;
-    height: 300px;
+    height: 500px;
     align-content: center;
     text-align: center;
 }
 
+/* Class Achievment */
 .achievement-content {
     border: 1px solid;
-    height: 300px;
+    height: 500px;
     align-content: center;
     text-align: center;
 }
 
+/* Class Message Us */
 .message-us-content {
     border: 1px solid;
-    height: 300px;
+    height: 500px;
     align-content: center;
-    text-align: center;
+    text-align: left;
 }
 
+/* Class Footer */
 footer {
     text-align: center;
 }
+
+
+/* Responsive */
+@media only screen and (max-width: 480px){
+    .main-header {
+        flex-direction: column;
+     }
+}
+@media only screen and (max-width: 480px){
+    nav { 
+        width: 100%;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+     }
+}
+@media only screen and (max-width: 480px){
+    .main-logo { 
+        margin-bottom: 14px;
+     }
+}    
