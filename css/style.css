@@ -5,93 +5,311 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px; /* Tambahkan padding agar tidak terlalu rapat ke tepi */
+    background-color: #fff; /* Contoh: Tambahkan background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Contoh: Tambahkan sedikit bayangan */
 }
 
 /* Class Main Logo */
 .main-logo {
     height: 50px;
     width: 50px;
-
     /* Class local image */
-    background-image: url(../assets/1.jpg);
+    background-image: url(../assets/1.jpg); /* Pastikan path gambar benar */
     background-position: center;
     background-size: cover;
     border-radius: 50%;
+    flex-shrink: 0; /* Agar logo tidak mengecil di flex container */
 }
 
 /* Class navigasi */
 nav {
     display: flex;
+    gap: 15px; /* Memberikan jarak antar link navigasi lebih mudah */
 }
-nav>a {
-    padding: 8px;
-    border: 1px solid;
+nav > a {
+    padding: 8px 15px; /* Beri padding horizontal juga */
+    border: 1px solid #ccc; /* Beri warna border yang lebih lembut */
     text-decoration: none;
-    color: black;
+    color: #333; /* Warna teks yang sedikit lebih gelap */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk hover */
+    border-radius: 4px; /* Sedikit lengkungan pada border */
 }
+nav > a:hover {
+    background-color: #007bff; /* Warna background saat hover */
+    color: white; /* Warna teks saat hover */
+}
+
 
 /* banner class local banner*/
 .banner-img {
     background-position: center;
     background-size: cover;
     height: 500px;
+    width: 100%; /* Contoh: Atur lebar menjadi 80% dari container /=================================
+    margin: 0 auto; / Untuk memusatkan banner jika lebarnya kurang dari 100% */
+    /* TAMBAHKAN baris ini untuk menyembunyikan semua banner secara default */
+    display: none;
+}
+/* TAMBAHKAN blok ini untuk menampilkan banner pertama saja di awal */
+.banner-img:first-of-type {
+    display: block;
 }
 .banner-1 {
     background-image: url(../assets/Kue1.jpg);
 }
+/* Banner pertama ditampilkan secara default jika JS belum jalan */
+.banner-img:first-of-type {
+    display: block; 
+}
+
+.banner-1 {
+    background-image: url(../assets/Kue1.jpg); /* Pastikan path gambar benar */
+}
 .banner-2 {
-    background-image: url(../assets/Kue2.jpg);
+    background-image: url(../assets/Kue2.jpg); /* Pastikan path gambar benar */
 }
 .banner-3 {
-    background-image: url(../assets/Kue3.jpg);
+    background-image: url(../assets/Kue3.jpg); /* Pastikan path gambar benar */
 }
 
 /* Class Our Profile */
 .our-profile-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
+    border: 1px solid #ddd; /* Border lebih lembut */
+    min-height: 300px; /* Gunakan min-height agar konten bisa lebih panjang */
+    padding: 20px; /* Tambahkan padding */
     text-align: center;
+    display: flex; /* Menggunakan flexbox untuk penataan konten */
+    flex-direction: column; /* Konten disusun vertikal */
+    justify-content: center; /* Konten di tengah secara vertikal */
+    align-items: center; /* Konten di tengah secara horizontal (untuk item flex) */
+    margin-top: 30px; /* Jarak dari section sebelumnya */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+.our-profile-content img {
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+}
+.our-profile-content h5 {
+    max-width: 800px; /* Batasi lebar teks agar tidak terlalu panjang */
+    line-height: 1.6; /* Kerapatan baris untuk keterbacaan */
+    color: #555;
+}
+
 
 /* Class Achievment */
 .achievement-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
+    border: 1px solid #ddd; /* Border lebih lembut */
+    min-height: 300px; /* Gunakan min-height */
+    padding: 20px; /* Tambahkan padding */
     text-align: center;
+    display: flex; /* Menggunakan flexbox */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.achievement-content h2 {
+    max-width: 900px; /* Batasi lebar teks */
+    line-height: 1.6;
+    color: #444;
 }
 
-/* Class Message Us */
-.message-us-content {
-    border: 1px solid;
-    height: 500px;
-    align-content: center;
-    text-align: left;
-}
 
-/* Class Footer */
-footer {
+/* Form Styling (dari .container yang sudah ada di HTML) */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto; /* Tambahkan margin-top dan auto untuk tengah */
+}
+h1 { /* Untuk h1 di dalam container formulir */
     text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+input[type="text"],
+input[type="date"],
+textarea {
+    width: calc(100% - 22px); /* 100% - (padding kiri + kanan + border kiri + kanan) */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border lebih lembut */
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Pastikan padding dan border masuk dalam perhitungan lebar */
+}
+/* Input radio sudah diatur di bawah, tapi ini sebagai fallback */
+input[type="radio"] {
+    margin-right: 5px;
+}
+button { /* Untuk tombol di luar form, jika ada */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.output-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    white-space: pre-wrap; /* Mempertahankan spasi dan baris baru dari JavaScript */
+    font-family: monospace; /* Font monospace untuk output kode/teks terstruktur */
+    color: #333;
+}
+.output-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #222;
 }
 
 
-/* Responsive */
-@media only screen and (max-width: 480px){
-    .main-header {
-        flex-direction: column;
-     }
+/* Styling untuk radio buttons dalam fieldset */
+/* Container untuk semua opsi radio */
+.radio-option-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Izinkan wrapping ke baris baru jika ruang tidak cukup */
+    justify-content: center; /* Pusatkan opsi secara horizontal */
+    gap: 15px; /* Jarak antara setiap item opsi */
+    margin-top: 10px; /* Jarak dari legend */
+    margin-bottom: 20px; /* Jarak dari elemen form berikutnya */
 }
-@media only screen and (max-width: 480px){
-    nav { 
-        width: 100%;
-        flex-direction: column;
-        align-content: center;
-        text-align: center;
-     }
+
+/* Gaya untuk setiap item opsi radio (div pembungkus input dan label) */
+.radio-option-item {
+    display: flex;
+    flex-direction: column; /* Mengatur input dan label secara vertikal di dalam item */
+    align-items: center; /* Memusatkan input dan label secara horizontal */
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fefefe;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    min-width: 100px; /* Agar ukurannya agak konsisten */
 }
-@media only screen and (max-width: 480px){
-    .main-logo { 
-        margin-bottom: 14px;
-     }
-}    
+
+/* Hover effect untuk item opsi */
+.radio-option-item:hover {
+    background-color: #e0f7fa;
+    border-color: #007bff;
+}
+
+/* Styling untuk input radio itu sendiri */
+input[type="radio"] {
+    margin-bottom: 8px; /* Jarak antara radio button dan label */
+    transform: scale(1.3); /* Memperbesar ukuran radio button */
+    cursor: pointer;
+    accent-color: #007bff; /* Mengubah warna default radio button (modern browsers) */
+}
+
+/* Styling untuk label yang terhubung dengan radio button */
+.radio-label {
+    display: block; /* Mengatur label agar mengambil lebar penuh di dalam flex-direction: column */
+    text-align: center; /* Memusatkan teks label */
+    font-weight: normal;
+    color: #555;
+    font-size: 1em;
+}
+
+/* Styling saat radio button dipilih */
+.radio-option-item input[type="radio"]:checked + .radio-label {
+    color: #007bff;
+    font-weight: bold;
+}
+.radio-option-item input[type="radio"]:checked ~ .radio-label { /* Ini untuk memastikan warna teks berubah */
+    color: #007bff;
+    font-weight: bold;
+}
+.radio-option-item:has(input[type="radio"]:checked) {
+    background-color: #e0f7fa;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Styling untuk tombol submit di dalam form */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Jarak dari elemen form di atasnya */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Global body styling - GABUNGAN dari dua blok body sebelumnya */
+body {
+    font-family: 'Arial', sans-serif; /* Pilihan font yang lebih eksplisit */
+    margin: 0; /* Set margin ke 0 di body, gunakan padding di elemen lain */
+    background-color: #f4f4f4;
+    line-height: 1.6; /* Keterbacaan teks secara keseluruhan */
+    color: #333; /* Warna teks default */
+    
+    /* Properti dari body kedua yang ingin dipertahankan */
+    display: flex;
+    flex-direction: column; /* Konten utama akan disusun secara kolom */
+    min-height: 100vh; /* Memastikan body mengambil tinggi viewport penuh */
+}
+
+/* Memberi padding pada elemen utama untuk mencegah konten menempel di tepi */
+main {
+    padding: 20px; /* Beri padding ke konten utama */
+    flex-grow: 1; /* Memastikan main mengambil ruang yang tersedia */
+}
+
+/* Styling untuk section agar ada jarak antar section */
+section {
+    margin-bottom: 50px; /* Jarak antar section */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+section:last-of-type {
+    margin-bottom: 0; /* Hapus margin bawah pada section terakhir */
+}
+
+/* Styling untuk header di setiap section */
+section header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+section header h1 {
+    color: #007bff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+section header p {
+    font-size: 1.1em;
+    color: #666;
+}
